@@ -19,7 +19,7 @@ public class GradeInArray{
 		int max = scores[0];
 		for (int i = 1; i < ArraySize; i++) {
 			if (scores[i] > max)
-			best = scores[i];
+			int best = scores[i];
 		}
 		
 		for (int i = 0; i < ArraySize; i++) {
