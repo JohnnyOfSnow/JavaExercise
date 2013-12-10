@@ -41,7 +41,7 @@ public class GradeInArray{
 		/** 
 		 *  Assign grade based on the following scheme:
 		 *	
-		 *	Grade is A >= best - 10
+		 *  Grade is A >= best - 10
 		 *  Grade is B >= best - 20
 		 *  Grade is C >= best - 30
 		 *  Grade is D >= best - 40
