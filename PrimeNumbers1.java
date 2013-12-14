@@ -7,22 +7,22 @@ public class PrimeNumbers1{
 		int PrimeCount = 1;
 		while(PrimeCount < 50){
 			
-				boolean prime = true;
-				int max = (int)(Math.pow(number, 1 / 2));
+			boolean prime = true;
+			int max = (int)(Math.pow(number, 1 / 2));
 
-				for (int j = 0; PrimeNumberArray[j] <= max; j++) { 
-	            	if ((number % PrimeNumberArray[j]) == 0) { 
-	                	prime = false; 
-	                	break; 
-	            	} 
-	        	} 		
-				if (prime) { 
-            		PrimeNumberArray[count] = number; 
+			for (int j = 0; PrimeNumberArray[j] <= count; j++) { 
+	            		if ((number % PrimeNumberArray[j]) == 0) { 
+	                		prime = false; 
+	                	 
+	            		} 
+	        	} 
+	        	
+			if (prime) { 
+            			PrimeNumberArray[PrimeCount] = number; 
 	        		PrimeCount = PrimeCount + 1;
-	        		count = count + 1;
+	        		
 	    		} 
 	    		number = number + 1;
-	    	
 		}
 		
 		int k = 0;
