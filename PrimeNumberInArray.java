@@ -30,10 +30,10 @@ public class PrimeNumberInArray{
 
 			/**
 			 *   For loop{
-			 *			1.ensure Number of square root is greater than or equal the array's element
-			 *			2.count > n(Because 2 is a prime number,I have to store 2 in array.When program
-			 *                 encounter 0 > 0, 2 is false(not executed the for loop), so 2 can store in array.)
-			 *   	If
+			 *		1.ensure Number of square root is greater than or equal the array's element
+			 *		2.count > n(Because 2 is a prime number,I have to store 2 in array.When program
+			 *                 	    encounter 0 > 0, 2 is false(not executed the for loop), so 2 can store in array.)
+			 *   If
 			 *          According to the 6.6, number divide number of square root is greater than or equal the array's element.
 			 *          case 1: remainder is 0(not a prime number---false) leave the loop
 			 *          case 2: remainder not 0(is a prime number---true ) leave the loop until all possible number have devided.
