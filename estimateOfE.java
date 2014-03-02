@@ -4,6 +4,8 @@ public class evaluateE {
   /** Main method */
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); // create a scanner
+		System.out.println("You can enter a non-negative number to estimate the natural number e");
+		System.out.print("The number is: ");// Prompt user to enter a number
 		int number = input.nextInt(); // user can enter a number
 		System.out.printf("%f\n",getValue(number)); // print the result
 	}
