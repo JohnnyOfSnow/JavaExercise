@@ -5,7 +5,7 @@ import java.awt.Polygon;
 public class DrawFunction extends JFrame{
 	public static void main(String[] args) {
 		DrawFunction frame = new DrawFunction();
-		frame.setSize(400, 400);
+		frame.setSize(400, 250);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -22,17 +22,20 @@ class FunctionDraw extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
-		int xCenter = getWidth() / 2;
-		int yCenter = getHeight() / 2;
-
-
 		Polygon p = new Polygon();
+		
+		double scaleFactor = 0.01;
+		for(int x = -100; x <=100; x++){
+			p.addPoint(x + 200, 200 - (int)(scaleFactor * x * x));
 
-		p.addPoint(xCenter + 5, yCenter + 10);
-		p.addPoint(xCenter + 10, yCenter + 10);
-		p.addPoint(xCenter + 20, yCenter + 10);
-		p.addPoint(xCenter + 30, yCenter + 10);
+		}
+		g.drawPolyline(p.xpoints, p.ypoints, p.npoints);
 
-		g.drawPolyline(p);
+		Polygon xAxis = new Polygon();
+
+		for(int x = 20; x <=300; x++){
+			xAxis.addPoint(x, 0);
+		}
+		g.drawPolyline(xAxis.xpoints, xAxis.ypoints, xAxis.npoints);
 	}
 }
