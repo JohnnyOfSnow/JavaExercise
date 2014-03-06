@@ -10,11 +10,11 @@ public class evaluateE {
 		System.out.printf("%f\n",getValue(number)); // print the result
 	}
 
-  /**
-   *  User give a number, and pass the number to getValue method
-   *  The method can estimate the natural number e
-   *  e almost close to 2.718
-   */
+  	/**
+   	*  User give a number, and pass the number to getValue method
+   	*  The method can estimate the natural number e
+   	*  e almost close to 2.718
+   	*/
 	static double getValue(int number) {  // A static method load in memory with the class(evaluateE).
 		int ziNumber = number;  // number pass to the inner od method.
 		int counter = 1;
