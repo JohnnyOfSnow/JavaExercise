@@ -29,7 +29,7 @@ class FunctionDraw extends JPanel {
 			p.addPoint(x + 200, 200 - (int)(scaleFactor * x * x));
 
 		}
-		g.drawPolyline(p.xpoints, p.ypoints, p.npoints);
+		g.drawPolyline(p.xpoints, p.ypoints, p.npoints); // plot the x * x function.
 
 		Polygon xAxis = new Polygon();
 
