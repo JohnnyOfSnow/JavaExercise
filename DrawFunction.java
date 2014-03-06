@@ -34,8 +34,15 @@ class FunctionDraw extends JPanel {
 		Polygon xAxis = new Polygon();
 
 		for(int x = 20; x <=300; x++){
-			xAxis.addPoint(x, 0);
+			xAxis.addPoint(x, 200);
 		}
-		g.drawPolyline(xAxis.xpoints, xAxis.ypoints, xAxis.npoints);
+		g.drawPolyline(xAxis.xpoints, xAxis.ypoints, xAxis.npoints); // plot x-axis
+		
+		Polygon yAxis = new Polygon();
+
+		for(int y = 250; y >= 30; y--){
+			yAxis.addPoint(200,y);
+		}
+		g.drawPolyline(yAxis.xpoints, yAxis.ypoints, yAxis.npoints); // plot y-axis
 	}
 }
