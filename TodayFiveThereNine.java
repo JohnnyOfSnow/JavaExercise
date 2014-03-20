@@ -20,31 +20,10 @@ public class TodayFiveThereNine {
 		/**
 		 *  Create a array to store the winning number.
 		 *	According to the rule of TodayFiveThereNine, the array size is five
-		 *  For loop can generate five random number.
+		 *  Through randomGenerateNumber (), we can get a winning number array.
 		 */
-		int[] WinningOfNumbers = new int[5];
-		for (int i = 0; i < WinningOfNumbers.length; i++) {
-			WinningOfNumbers[i] = (int)(Math.random() * 39) + 1;
-		}
-
-		/**
-		 *  Checking the numbers whether are same or not.
-		 *  case: have the same number(should random another number)
-		 */
-		int RepeatCount = 0;
-		for (int i = 0; i < WinningOfNumbers.length; i++) {
-			for (int k = 0; k < i; k++) {
-				if(WinningOfNumbers[i] == WinningOfNumbers[k]){
-					WinningOfNumbers[i] = (int)(Math.random() * 39) + 1;
-					RepeatCount = RepeatCount + 1;
-				}
-			}
-			if (RepeatCount > 0) {
-				RepeatCount = 0;
-				i = i - 1;
-			}
-		}
-
+		int[] WinningOfNumbers = randomGenerateNumber ();
+		
 		// Create a array to store the player number, and prompt user to enter.
 		int[] PlayerOfNumbers = new int[5];
 		PlayerOfNumbers = playEnterNumber ();
@@ -122,6 +101,40 @@ public class TodayFiveThereNine {
 		for (int i = 0; i < list.length; i++) {
 			list[i] = input1.nextInt();
 		}
+		return list;
+	}
+
+	static int[] randomGenerateNumber () {
+		Scanner input2 = new Scanner(System.in);
+
+		/**
+		 *  Create a array to store the winning number.
+		 *	According to the rule of TodayFiveThereNine, the array size is five
+		 *  For loop can generate five random number.
+		 */
+		int[] list = new int[5];
+		for (int i = 0; i < list.length; i++) {
+			list[i] = (int)(Math.random() * 39) + 1;
+		}
+
+		/**
+		 *  Checking the numbers whether are same or not.
+		 *  case: have the same number(should random another number)
+		 */
+		int RepeatCount = 0;
+		for (int i = 0; i < list.length; i++) {
+			for (int k = 0; k < i; k++) {
+				if(list[i] == list[k]){
+					list[i] = (int)(Math.random() * 39) + 1;
+					RepeatCount = RepeatCount + 1;
+				}
+			}
+			if (RepeatCount > 0) {
+				RepeatCount = 0;
+				i = i - 1;
+			}
+		}
+
 		return list;
 	}
 }
