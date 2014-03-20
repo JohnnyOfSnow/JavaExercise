@@ -11,7 +11,7 @@
 
 import java.util.Scanner;
 
-public class TodayFiveThereNine{
+public class TodayFiveThereNine {
 	/** Main method */
 	public static void main(String[] args){
 		// Create a scanner
@@ -47,10 +47,8 @@ public class TodayFiveThereNine{
 
 		// Create a array to store the player number, and prompt user to enter.
 		int[] PlayerOfNumbers = new int[5];
-		System.out.print("Enter your number: ");
-		for (int i = 0; i < PlayerOfNumbers.length; i++) {
-			PlayerOfNumbers[i] = input.nextInt();
-		}
+		PlayerOfNumbers = playEnterNumber ();
+		
 
 		/**
 		 *  player number vs. winning number
@@ -65,6 +63,23 @@ public class TodayFiveThereNine{
 				}
 			}
 
+		}
+
+		boolean needNextPass = true;
+
+		for (int k = 1;k < WinningOfNumbers.length && needNextPass; k++) {
+
+			needNextPass = false;
+			for (int i = 0; i < WinningOfNumbers.length - k; i++){
+				if (WinningOfNumbers[i] > WinningOfNumbers[i + 1]) {
+					//Swap
+					int temp = WinningOfNumbers[i];
+					WinningOfNumbers[i] = WinningOfNumbers[i + 1];
+					WinningOfNumbers[i + 1] = temp;
+
+					needNextPass = true; // Need next pass
+				}
+			}	
 		}
 
 		// Display the winning number.
@@ -98,5 +113,15 @@ public class TodayFiveThereNine{
 			default:
 				System.out.println("You get $0");
 		}
+	}
+
+	static int[] playEnterNumber () {
+		Scanner input1 = new Scanner(System.in);
+		int[] list = new int[5];
+		System.out.print("Enter your number: ");
+		for (int i = 0; i < list.length; i++) {
+			list[i] = input1.nextInt();
+		}
+		return list;
 	}
 }
