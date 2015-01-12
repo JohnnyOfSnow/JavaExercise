@@ -14,19 +14,20 @@ public class matrixProduct{
 	public static void main(String[] args) {
 //                        0  1  2  3  4  5  6  7  8
 // ===================================================
-      int[][] conn = {  { 0, 1, 0, 0},  // 0
+	int[][] conn = {	{ 0, 1, 0, 0},  // 0
 						{ 1, 0, 0, 1},  // 1
 						{ 1, 2, 0, 1},  // 2
 						{ 0, 0, 0, 3}  };// 3
 
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("Please enter a number for the matrix power: "); // prompt user to enter
-	  int power = input.nextInt();
+		Scanner input = new Scanner(System.in);
+		System.out.print("Please enter a number for the matrix power: "); // prompt user to enter
+		int power = input.nextInt();
 
-      doProduct(conn,power);
+		doProduct(conn,power);
 	}
 
 	static void doProduct(int[][] matrix, int times){
+		int displayTimes = times;
 		int addTime = 0;
 		int productTime = 0;
 		int[][] tempResult = new int[matrix.length][matrix.length];
@@ -81,7 +82,7 @@ public class matrixProduct{
 		}
 
 		/** need  n*n*n*(k - 1) times addition and multiplication */
-		System.out.println("\n" + matrix.length + "*" + matrix.length + " power is " + times + 
+		System.out.println("\n" + matrix.length + "*" + matrix.length + " power is " + displayTimes + 
 			" matrix totally, do " + addTime + " addition, do "+ productTime + " multiplication");
 	}
 }
